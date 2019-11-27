@@ -40,7 +40,7 @@ export default function Radar() {
   const [watchID, setWatchID] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [successModalVisible, setSuccessModalVisible] = useState(false);
-  const [contentModalVisible, setContentModalVisible] = useState(true);
+  const [contentModalVisible, setContentModalVisible] = useState(false);
 
   const region = useSelector(state => state.map.region);
   const points = useSelector(state => state.getPoints.data);

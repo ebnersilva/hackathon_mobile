@@ -14,22 +14,15 @@ export default function ContentPage({ visible, hideModal, showModalSuccess }) {
         <ContainerModal>
           <ContainerQuestion>
           <StyledViewQuestion>
-            <StyledText styles={{ color: '#FFF' }}>O que é CRUD?</StyledText>
+            <StyledText styles={{ color: '#FFF' }}>
+              Inteligencia artificial torna médicos (apenas supervisores de diagnosticos)
+              Para especialistas a digitalização de medicina vai trazer muitas mudanças.
+              Uma delas é o papel do médico em vez de diagnosticar vai apenas ver se a máquina
+              deu o resultado correto.
+            </StyledText>
           </StyledViewQuestion>
-          <StyledButton onPress={() => {
-            showModalSuccess()
-            hideModal()
-          }}>
-            <StyledTextButton styles={{ color: '#FFF' }}>Create, Read, Update, Delete</StyledTextButton>
-          </StyledButton>
-          <StyledButton onPress={() => alert('Resposta Incorreta, Tente novamente!')}>
-            <StyledTextButton styles={{ color: '#FFF' }}>Personagem anime</StyledTextButton>
-          </StyledButton>
-          <StyledButton onPress={() => alert('Resposta Incorreta, Tente novamente!')}>
-            <StyledTextButton styles={{ color: '#FFF' }}>View Model e Controller</StyledTextButton>
-          </StyledButton>
-          <StyledButton onPress={() => alert('Resposta Incorreta, Tente novamente!')} >
-            <StyledTextButton styles={{ color: '#FFF' }}>Nenhuma das alternativas</StyledTextButton>
+          <StyledButton onPress={() => hideModal()} >
+            <StyledTextButton styles={{ color: '#FFF' }}>BUSCAR PROXIMO DESAFIO</StyledTextButton>
           </StyledButton>
           </ContainerQuestion>
         </ContainerModal>

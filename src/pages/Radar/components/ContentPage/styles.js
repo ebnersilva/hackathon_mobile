@@ -26,7 +26,7 @@ export const ContainerQuestion = styled.View`
 `;
 
 export const StyledButton = styled.TouchableOpacity`
-  width: 240px;
+  width: 90%;
   height: 50px;
   background: #136CAC;
   color: #FFF;
