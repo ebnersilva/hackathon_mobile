@@ -10,7 +10,7 @@ class App extends Component {
   };
 
   render() {
-    let initialRoute = "Login";
+    let initialRoute = "SignIn";
     const Routes = createNavigator(initialRoute);
 
     return (

@@ -5,22 +5,25 @@ import NavigationService from "~/services/navigation";
 
 import { actionLoginSuccess, actionLoginFailure } from "./actions";
 
-
 export function* login({ payload: { data } }) {
   try {
-    const response = yield call(api.post, "/sessions", { data });
+    const response = yield call(api.post, "/sessions", data);
 
     yield call(
       [AsyncStorage, "setItem"],
       "@Hackathon:token",
-      response.data.token
+      response.data[0].token
     );
 
     yield put(actionLoginSuccess(response.data));
 
-    NavigationService.navigate("Radar");
+    if (response.data[1].type === 0) {
+      NavigationService.navigate("Activity");
+    } else {
+      NavigationService.navigate("QrCodeScan");
+    }
   } catch (err) {
-    yield put(actionLoginFailure(err.message));
+    yield put(actionLoginFailure(err));
   }
 }
 

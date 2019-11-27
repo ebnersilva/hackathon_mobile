@@ -1,14 +1,27 @@
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 
-import Login from "./pages/Login";
+import Activity from "./pages/Activity";
+import Initial from "./pages/Initial";
+import QrCodeGen from "./pages/QrCodeGen";
+import QrCodeScan from "./pages/QrCodeScan";
 import Radar from "./pages/Radar";
+import Places from "./pages/Places";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
-export default function createNavigator(initialRoute = "Login") {
+
+export default function createNavigator(initialRoute = "Initial") {
   return createAppContainer(
     createSwitchNavigator(
       {
-        Login,
-        Radar
+        Activity,
+        Initial,
+        QrCodeGen,
+        QrCodeScan,
+        Radar,
+        Places,
+        SignIn,
+        SignUp
       },
       {
         initialRouteName: initialRoute
