@@ -4,9 +4,9 @@ import Lottie from "lottie-react-native";
 
 import animation_success from "./animation_success.json";
 import animation_success_1 from "./animation_success_1.json";
-import { TextMessage, ContainerAnimation } from "./styles";
+import { TextMessage, ContainerAnimation, StyledButton, StyledTextButton } from "./styles";
 
-export default function AnimationSuccess({ message, hideModal }) {
+export default function AnimationSuccess({ message, hideModal, showModalContent}) {
   const [showAnimation, setShowAnimation] = useState(true);
 
   useEffect(() => {
@@ -42,6 +42,12 @@ export default function AnimationSuccess({ message, hideModal }) {
         autoPlay
         loop
       />
+      <StyledButton onPress={() => {
+        showModalContent()
+        hideModal()
+      }} >
+        <StyledTextButton>Capturar Conteúdo</StyledTextButton>
+      </StyledButton>
     </ContainerAnimation>
   );
 }

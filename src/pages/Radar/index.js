@@ -7,10 +7,12 @@ import Geolocation from "@react-native-community/geolocation";
 import NightMapStyle from "./MapStyles/NightMapStyle.json";
 
 import EasterEggs from './components/EasterEggs';
+import ContentPage from "./components/ContentPage";
 
 import LottieView from 'lottie-react-native';
 
 import AnimationSuccess from "~/components/AnimationSuccess";
+
 
 
 import * as MapActions from "~/store/modules/map/actions";
@@ -38,6 +40,7 @@ export default function Radar() {
   const [watchID, setWatchID] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [successModalVisible, setSuccessModalVisible] = useState(false);
+  const [contentModalVisible, setContentModalVisible] = useState(true);
 
   const region = useSelector(state => state.map.region);
   const points = useSelector(state => state.getPoints.data);
@@ -152,7 +155,9 @@ export default function Radar() {
         );
       } catch (err) {
         if (__DEV__) {
-          console.tron.log("Erro do Try Catch: ", err);
+          console.tron.log("Erro do Try Catch: ", err);AnimationSuccess
+          AnimationSuccess
+          AnimationSuccess
         }
       }
     }
@@ -193,7 +198,8 @@ export default function Radar() {
         <LottieView source={require('./animation.json')} autoPlay loop style={{ height: 400, width: 400 }} />
       </ContainerAnimation>
       {modalVisible && <EasterEggs showModalSuccess={() => setSuccessModalVisible(true)} hideModal={() => setModalVisible(false)} visible={modalVisible} />}
-      {successModalVisible && <AnimationSuccess hideModal={() => setSuccessModalVisible(false)} message="Você conseguiu desbloquear" />}
+      {successModalVisible && <AnimationSuccess showModalContent={() => setContentModalVisible(true)} hideModal={() => setSuccessModalVisible(false)} message="Você conseguiu desbloquear" />}
+      {contentModalVisible && <ContentPage hideModal={() => setContentModalVisible(false)}/>}
     </>
   );
 }

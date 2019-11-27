@@ -23,9 +23,24 @@ export const TextMessage = styled.Text`
   top: 40%;
 `;
 
+export const StyledButton = styled.TouchableOpacity`
+  width: 240px;
+  height: 50px;
+  background: #FFF;
+  color: #FFF;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  margin-bottom: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const StyledTextButton = styled.Text`
   font-size: 18px;
-  color: #FFF;
+  color: #000;
   width: 100%;
   text-align: center;
 `;
