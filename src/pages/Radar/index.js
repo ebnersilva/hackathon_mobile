@@ -82,13 +82,12 @@ export default function Radar() {
         return true;
       }
     }).error(err => {
-      console.log("Erro: ", err)
+      // console.log("Erro: ", err)
     });
   }
 
   // Fica ouvindo a posição atual do usuário e atualizando o state
   async function handleWatchPosition() {
-    console.tron.log('Chamou o watch Position')
     try {
       Geolocation.watchPosition(
         async ({ coords: { latitude, longitude } }) => {
@@ -169,10 +168,6 @@ export default function Radar() {
     dispatch(GetPointsActions.actionGetPointsRequest());
   }, [])
 
-  function onRegionChangeComplete(coordinate){
-    console.tron.log(coordinate);
-  }
-
   return (
     <>
       <MapView
@@ -185,7 +180,6 @@ export default function Radar() {
         // eslint-disable-next-line no-return-assign
         ref={el => (mapView = el)}
         // zoomEnabled={false}
-        onRegionChangeComplete={onRegionChangeComplete}
         showsMyLocationButton
         showCompass={false}
       >

@@ -6,7 +6,6 @@ import { actionSavePointSuccess, actionSavePointFailure } from "./actions";
 
 export function* savePoint({ payload: { data } }) {
   try {
-    console.tron.log('Chegou', data)
     const response = yield call(api.post, "/points", data);
 
     yield put(actionSavePointSuccess(response.data));

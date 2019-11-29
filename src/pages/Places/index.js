@@ -54,7 +54,7 @@ export default function Places() {
         return true;
       }
     }).error(err => {
-      console.log("Erro: ", err)
+      // console.log("Erro: ", err)
     });
   }
 
